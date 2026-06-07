@@ -54,7 +54,6 @@ int countPairs2(int* arr, int len, int value) {
 
 int countPairs3search(int* arr, int left, int right, int target) {
     while (left <= right) {
-
         int midNum = left + (right - left) / 2;
 
         if (arr[midNum] == target)
@@ -75,10 +74,10 @@ int countPairs3(int* arr, int len, int value) {
 
         int indNum = countPairs3search(arr, i + 1, len - 1, Num);
 
-        if (indNum == -1) {
+        if (indNum != -1) {
             int leftNum = indNum;
             int rightNum = indNum;
-    
+
             while (leftNum - 1 > i && arr[leftNum - 1] == Num)
                 leftNum = leftNum - 1;
 
